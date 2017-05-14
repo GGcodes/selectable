@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Interaction:Selectable and Non-Selectables</title>
+
+<style>
+
+  ol
+  {
+    list-style-type:none;
+    width:170px;
+    height:480px;
+  }
+
+  li
+  {
+  width: 150px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 2px;
+  font-size: 20px;
+  text-align: center;
+  }
+
+#fruits li{
+  background: pink;
+
+}
+  #vegetable li
+  {
+    background-color: gray;
+  }
+  #fieldset{
+    float:left;
+    margin:30px;
+    width:200px;
+    height:500px;
+    border:5px solid black;
+  }
+
+
+</style>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+
+  $(document).ready(function(){
+    $("#fruits").sortable({connectWith:"#vegetable", dropOnEmpty:false});
+    $("#vegetable").sortable({connectWith:"#fruits"});
+  });
+
+</script>
+
+</head>
+<body>
+  <fieldset id="left">
+    <legend><br>FRUITS</br></legend>
+<ol id="fruits">
+  <li id="mango">Mango</li>
+  <li id="carrot">Carrot</li>
+  <li id="bannana">Banana</li>
+  <li id="tomato">Tomato</li>
+  <li id="strawberry">Strawberry</li>
+
+</ol>
+
+<fieldset id="right">
+  <legend><br>VEGETABLES</br></legend>
+<ol id="vegetable">
+  <li id="pumpkin">Pumpkin</li>
+    <li id="apple">Apple</li>
+    <li id="mango">Mango</li>
+    <li id="strawberry">Strawberry</li>
+    <li id="potato">Potato</li>
+
+</ol>
+  </body>
+  </html>
