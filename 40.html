@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sortable</title>
+
+<style>
+  ol
+  {
+    list-style-type:none;
+    width:70px;
+    height:180px;
+  }
+
+  li
+  {
+  width: 150px;
+  height: 30px;
+  border: 1px solid black;
+  margin: 2px;
+  font-size: 20px;
+  text-align: center;
+  }
+
+#fruits li
+{
+  background: pink;
+}
+
+#vegetable li
+{
+  background-color: gray;
+}
+
+#fieldset
+{
+  position: left;
+  margin:30px;
+  width:100px;
+  height:300px;
+  border:5px solid black;
+}
+
+</style>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $("ol").sortable({cancel:".no"});
+  });
+
+</script>
+
+</head>
+<body>
+  <fieldset id="left">
+    <legend><br>FRUITS</br></legend>
+<ol id="fruits">
+  <li class="no" id="mango">Mango</li>
+  <li class="yes" id="mango">Carrot</li>
+  <li class="no" id="mango">Banana</li>
+  <li class="yes" id="mango">Tomato</li>
+  <li class="no" id="mango">Strawberry</li>
+</ol>
+
+</fieldset>
+
+<fieldset id="right">
+  <legend><br>VEGETABLE</br></legend>
+<ol id="vegetable">
+    <li class="yes" id="mango">Pumpkin</li>
+    <li class="yes" id="mango">Apple</li>
+    <li class="no" id="mango">Mango</li>
+    <li class="no" id="mango">Strawberry</li>
+    <li class="yes" id="mango">Potato</li>
+</ol>
+</fieldset>
+
+  </body>
+  </html>
