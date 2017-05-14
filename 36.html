@@ -24,18 +24,27 @@
 
   #fruits .ui-selecting
   {
-    background: purple;
-    color: white;
-
+    border: 3px solid maroon;
   }
 
-  #fruits .ui-selecting
+
+  #fruits .ui-selected
   {
     background:maroon;
     color: white;
-    font-size: 25px;
-
+    border: 1px solid black;
   }
+  #hint
+  {
+    display:none;
+    position: absolute;
+    background: blue;
+    border: 5px solid green;
+    border-radius: 5px;
+    color: white;
+    padding: 10px
+  }
+
 </style>
 
 <link rel="stylesheet" href="jquery-ui.css">
@@ -53,9 +62,26 @@
 <script>
 
   $(document).ready(function(){
-  $("#fruits").selectable();
+  $("#fruits").selectable({start:function(e){
+      $("#hint").css({
+        display: "inline",
+        left:e.pageX,
+        top:e.pageY
+      }).fadeOut(3000);
 
+  },
+selected(event, ui){
+  //  alert($(ui.selected).text());
+
+  },
+    stop:function(){
+      $('#items').text("");
+      $(".ui-selected").each(function(key, value){
+            $("#items").append(value.innerHTML + "<br />");
+          });
+    }});
   });
+
 </script>
 
 </head>
@@ -71,5 +97,8 @@
   <li>Grapes</li>
 
 </ol>
+<div id="hint">To select multiple items, click Ctrl and Select or Drag the lasso</div>
+<p><b>Items Selected:</b></p>
+<div id="items"></div>
   </body>
   </html>
