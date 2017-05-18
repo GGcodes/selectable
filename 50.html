@@ -33,12 +33,18 @@ p{
   $(document).ready(function(){
     $("#details").accordion({animate:5000,
                               beforeActivate:function(event, ui){
+                                if ($(ui.newHeader).attr("id") == "secret")
+                                {
+                                    $(this).preventDefault();
+                                }
+
+                              },
                               alert("Old Header: " + $(ui.oldHeader).text() + "\n" +
                               "Old Header: " + $(ui.oldPanel).text() + "\n" +
                               "New Header: " + $(ui.newHeader).text() + "\n" +
                               "New Panel: " + $(ui.newPanel).text());
                             },
-                            activate:function(){
+                            activate:function(event, ui){
                               alert("Old Header: " + $(ui.oldHeader).text() + "\n" +
                               "Old Header: " + $(ui.oldPanel).text() + "\n" +
                               "New Header: " + $(ui.newHeader).text() + "\n" +
