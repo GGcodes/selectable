@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget</title>
+
+<style>
+#details
+{
+  height: 200px;
+  width:450px;
+}
+
+p{
+  text-align: justify;
+}
+
+</style>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $("#details").accordion({animate:5000,
+                              beforeActivate:function(event, ui){
+                              alert("Old Header: " + $(ui.oldHeader).text() + "\n" +
+                              "Old Header: " + $(ui.oldPanel).text() + "\n" +
+                              "New Header: " + $(ui.newHeader).text() + "\n" +
+                              "New Panel: " + $(ui.newPanel).text());
+                            },
+                            activate:function(){
+                              alert("Old Header: " + $(ui.oldHeader).text() + "\n" +
+                              "Old Header: " + $(ui.oldPanel).text() + "\n" +
+                              "New Header: " + $(ui.newHeader).text() + "\n" +
+                              "New Panel: " + $(ui.newPanel).text());
+
+                            }});
+});
+
+</script>
+
+</head>
+<body>
+  <div id="details">
+    <h2 id="jquery">jQuery</h2>
+  <p>jQuery is a popular JavaScript library which simplifies JavaScript programming</p>
+  <h2 id="ui">jQuery UI</h2>
+  <p>jQuery User Interface is built on the top of jQuery. It is useful to design highly interactive weeb applications</p>
+  <h2 id="mobile">jQuery Mobile</h2>
+  <p>jQuery is a HTML5-based user interface system designed to make responsive websites and apps that are accessible on all smartphone, tablet and desktop devices.</p>
+  <h2 id="secret">Secret Message</h2>
+  <p>This is some secret message!!</p>
+  </div>
+
+  </body>
+  </html>
