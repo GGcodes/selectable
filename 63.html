@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget: Autocomplete</title>
+
+<style>
+  #space
+  {
+    width:100px;
+    height:100px;
+    border:1px solid black;
+
+  }
+  </style>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+  var currency = [
+                {label:"Angola", value:"Angolan dollar"},
+                {label:"Cambodia", value:"Angolan dollar"},
+                ];
+
+  $(document).ready(function(){
+    $("#country").autocomplete({source: currency,
+      select:function(event, ui){
+        $("#result").text((ui.item.label) + " 's currency is " + (ui.item.value));
+      }
+
+      });
+
+});
+
+</script>
+
+</head>
+<body>
+  <div id="space"></div>
+<label for="countries">Countries: </label>
+<input id="country">
+</body>
+  </html>
