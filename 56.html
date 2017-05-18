@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget</title>
+
+<style>
+#details
+{
+  margin:15px;
+  width:450px;
+  height:100px;
+}
+
+p{
+  text-align: justify;
+}
+
+</style>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+
+  $(document).ready(function(){
+    $("#details").tabs({heightStyle:"fill"});
+
+});
+</script>
+
+</head>
+<body>
+  <div id="details">
+    <ul>
+      <li><a href="#jQuery">jQuery</a></li>
+      <li><a href="#ui">jQuery UI</a></li>
+      <li><a href="#mobile">jQuery Mobile</a></li>
+    </ul>
+
+  <p id="jquery">jQuery is a popular JavaScript library which simplifies JavaScript programming</p>
+  <p id="ui">jQuery is a popular JavaScript</p>
+  <p id="mobile">jQuery is a popular JavaScript library which simplifies JavaScript programming</p>
+
+  </div>
+
+  </body>
+  </html>
