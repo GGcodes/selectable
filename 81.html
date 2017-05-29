@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Widget: Datepicker</title>
+
+
+
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://github.com/jquery/jquery-ui/blob/master/ui/i18n/datepicker-ar.js"></script>
+
+
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="ar.js"></script>
+  <script src="fr.js"></script>
+
+  <script>
+
+  $(document).ready(function(){
+      $("#calendar1").datepicker($.datepicker.regional["ar"]);
+      $("#calendar2").datepicker($.datepicker.regional["fr"]);
+});
+     </script>
+
+    </head>
+
+  <body>
+    Date of Appointment: <input id="calendar1" type="text"  />
+    <input id="calendar2" type="text"  />
+    </body>
+    </html>
