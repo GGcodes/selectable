@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget: Datepicker</title>
+
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <script>
+
+  $(document).ready(function(){
+      $("#calendar").datepicker({onSelect:function(dateString){
+        var selectedDate = $("#calendar").datepicker("getDate");
+        alert("The date selected is " + dateString);
+      },
+      onClose:function(){alert("The datepicker is about to close");},
+      onChangeMonthYear:function(year, month, datepicker){
+        var monthArr = ["January", "February",
+        "March", "April",
+        "May", "June",
+        "July", "August",
+        "September", "October",
+        "November", "December"];
+      alert("Month: " + monthArr[month-1] + "\n Year: " + year);
+    }});
+
+
+    $("#calendar").datepicker("setDate", "08/21/2016");
+    $("#btnShow").click(function(){
+      $("#calendar").datepicker("show");
+    });
+
+    $("#btnHide").click(function(){
+      $("#calendar").datepicker("hide");
+});
+      /*$("#calendar").datepicker({onSelect:function(dateString){
+        var selectedDate = $("#calendar").datepicker("getDate");
+      },
+          */
+
+      });
+     </script>
+
+    </head>
+
+  <body>
+    Date of Appointment: <input type="text" id="calendar"  />
+    <button id="btnShow">Show</button>
+    <button id="btnHide">Hide</button>
+
+    </body>
+    </html>
