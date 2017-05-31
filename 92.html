@@ -20,9 +20,9 @@
 <script>
 
       $(document).ready(function(){
-        $("#range").slider({
+        $("#range").slider({orientation:"vertical",
                   change:function(event, ui){
-                    $("#current").text(ui.values);
+                    $("#current").text(ui.value);
         }});
         var current = $("#range").slider("option", "value");
         $("#currrent").text(current);
