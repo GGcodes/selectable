@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget: Progress Bar</title>
+
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+
+      $(document).ready(function(){
+        $("#mySlider").slider({change:function(event, ui){
+                    $("#current").text(ui.value);
+        },
+        slide:function(event, ui){
+            $("#changing").text(ui.value);
+        },
+          start:function(){
+            alert("Sliding Started!!");
+          },
+          stop:function(){
+            alert("Sliding Stopped!!")
+
+          }});
+  var current = $("#mySlider").slider("option", "value");
+  $("#current").text(current);
+});
+
+</script>
+       </head>
+
+    <body>
+       Value: <span id="current"></span>
+       Changing: <span id="changing"></span>
+       <div id="mySlider"></div>
+
+    </body>
+  </html>
