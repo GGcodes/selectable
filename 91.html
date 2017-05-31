@@ -20,15 +20,18 @@
 <script>
 
       $(document).ready(function(){
-        $("#mySlider").slider();
+        $("#mySlider").slider({min:50, max:200, value:125});
         var min = $("#mySlider").slider("option", "min");
         var max = $("#mySlider").slider("option", "max");
+        var current = $("#mySlider").slider("option", "value");
+        $("#currrent").text(current);
         alert("Min: " + min + " Max: " + max);
 });
 </script>
        </head>
 
      <body>
+       Value:<span id="current"></span>
   <div id="mySlider"></div>
 
     </body>
