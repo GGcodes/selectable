@@ -20,19 +20,22 @@
 <script>
 
       $(document).ready(function(){
-        $("#mySlider").slider({min:50, max:200, value:125});
-        var min = $("#mySlider").slider("option", "min");
-        var max = $("#mySlider").slider("option", "max");
-        var current = $("#mySlider").slider("option", "value");
-        $("#currrent").text(current);
-        alert("Min: " + min + " Max: " + max);
+        $("#range").slider({value:50, range:true, values:[25, 75],
+                  change:function(event, ui){
+                    $("#current").text("$" + ui.values[0] + " - $" + ui.values[1]);
+        }});
+        var min = $("#range").slider("option", "min");
+        var max = $("#range").slider("option", "max");
+        var current = $("#range").slider("option", "values");
+        $("#currrent").text("$" + current[0] + " - $" + current[1]);
+
 });
 </script>
        </head>
 
      <body>
-       Value:<span id="current"></span>
-  <div id="mySlider"></div>
+       Price Range:<span id="current"></span>
+  <div id="range"></div>
 
     </body>
   </html>
