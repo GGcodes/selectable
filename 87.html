@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget: Progress Bar</title>
+
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+  .ui-progressbar
+  {
+  background: gray;
+  border-radius: 25px;
+
+  }
+
+  .ui-progressbar-value
+  {
+      border-radius: 25px;
+      text-align: right;
+      color:black;
+      font-weight: normal;
+  }
+
+  #maximum
+  {
+    float: right;
+    margin-right: 15px;
+  }
+
+  </style>
+
+  <script>
+
+      $(document).ready(function(){
+        $("#bar").progressbar({value:20, max:50});
+        var maximum = $("#bar").progressbar("option", "max");
+        $("#maximum").text(maximum + "%");
+        var current = $("#bar").progressbar("option", "value");
+        $(".ui-progressbar-value").text(current + "%");
+
+      /*alert($("#bar1").progressbar("option", "max"));*/
+
+});
+      </script>
+
+     </head>
+
+   <body>
+<div id="bar"><span id="maximum"></span></div>
+
+  </body>
+</html>
