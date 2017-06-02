@@ -44,11 +44,12 @@ a
           });
           $("#btnExpand").click(function(){
             $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(2)"));
-              $("#myMenu").menu("expand");
+              $("#myMenu").menu("previous");
+                $("#myMenu").menu("expand");
 
                       });
                       $("#btnCollapse").click(function(){
-                          $("#myMenu").menu("collapse");
+                          $("#myMenu").menu("collapseAll");
 });
                          });
 
