@@ -34,14 +34,16 @@
           $("#btnIsValid").click(function(){
               var isValid = $("#mySpinner").spinner("isValid");
               alert(isValid);
-          });
+            });
+
           $("btnPageUp").click(function(){
-            $("#mySpinner").spinner("pageUp", 2)
+            $("#mySpinner").spinner("pageUp", 4)
         });
         $("btnPageDown").click(function(){
-          $("#mySpinner").spinner("pageDown", 4)
+          $("#mySpinner").spinner("pageDown", 2)
+
+        });
       });
-    });
 
 </script>
 </head>
@@ -52,6 +54,6 @@
     <button id="btnStepDown">Step Down</button>
       <button id="btnIsValid">Is Valid</button>
       <button id="btnPageUp">Page Up</button>
-  <button id="btnPageDown">Page Down</button>
+      <button id="btnPageDown">Page Down</button>
 </body>
 </html>

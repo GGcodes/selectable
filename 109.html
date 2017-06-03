@@ -25,6 +25,7 @@
         $("#mySpinner").spinner({step:5, page:2,
           icons:{up:"ui-icon-plus", down:"ui-icon-minus"},
           min:0, max:100});
+
           $("#btnStepUp").click(function(){
               $("#mySpinner").spinner("stepUp", 3)
           });
@@ -32,8 +33,8 @@
               $("#mySpinner").spinner("stepDown", 2)
           });
           $("#btnIsValid").click(function(){
-              var isValid = $("#mySpinner").spinner("isValid");
-              alert(isValid);
+              var isValid = $("#mySpinner").spinner("isValid")
+              alert(isValid)
           });
           $("btnPageUp").click(function(){
             $("#mySpinner").spinner("pageUp", 2)
