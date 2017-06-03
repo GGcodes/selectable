@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Widget: Checkbox Radio</title>
+
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+      <!-- <referencing jquery-ui online -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+</style>
+
+<script>
+      $(document).ready(function(){
+        $("#jquerys").selectmenu({icons:{button:"ui-icon-plus"}, width:200,
+                                  position:{at:"left+100 top+200"}});
+
+        $("#btnOpen").click({function(){
+        $("#jquerys").selectmenu("open");
+      });
+      $("#btnClose").click({function(){
+      $("#jquerys").selectmenu("close");
+
+      });
+    });
+</script>
+</head>
+
+<body>
+<select id="jquerys">
+  <option value="jquery">jQuery</option>
+  <option value="ui">jQuery UI</option>
+  <option value="mobile">jQuery Mobile</option>
+</select>
+
+<button id="btnOpen">Open</button>
+<button id="btnClose">Close</button>
+
+</body>
+</html>
