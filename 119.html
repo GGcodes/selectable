@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Let's Develop jQuery UI Projects Developed from Scratch</title>
+
+<style>
+  border-radius: 15px;
+  </style>
+  
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+      <!-- <referencing jquery-ui online -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+<script>
+  var fruitsArr = ["myimages/apple.jpg",
+                    "myimages/kiwi.jpg",
+                    "myimages/pineapple.jpg",
+                    "myimages/watermelon.jpg",
+                    "myimages/orange.jpg",
+                    "myimages/strawberry.jpg",
+                    "myimages/bannana.jpg"];
+
+    var namesArr = ["Apple", "Pineapple", "Orange", "Bannana", "Strawberry", "Watermelon", "Kiwi", "Apple"];
+
+    $(document).ready(function(){
+        shuffle(fruitsArr);
+          $.each(fruitsArr, function(index, value){
+            $("#fruits").append("<div><img src=" + value + " /></div")
+            .appendTo("#fruits");
+
+          });
+
+    });
+
+    function shuffle(arr)
+    {
+      return arr.sort(function(){
+      return .5 - Math.random();
+      });
+
+    }
+  </script>
+
+  </head>
+
+<body>
+      <div id="fruits"></div>
+      <div id="droparea"></div>
+
+</body>
+  </html>
