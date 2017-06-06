@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Let's Develop jQuery UI Projects Developed from Scratch</title>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+      <!-- <referencing jquery-ui online -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+  #container
+  {
+    width:550px;
+    height:200px;
+    border:2px solid maroon;
+    margin:90px auto;
+    border-radius:10px;
+  }
+
+  h2{
+    text-align: center;
+    color:maroon;
+  }
+
+  input {
+    width:300px;
+    height:40px;
+    border:1px solid maroon;
+    border-radius:5px;
+    font-size:15px;
+    text-align: center;
+    margin-left: 120px;
+  }
+
+  #meter
+  {
+    border:1px solid maroon;
+    width:300px;
+    height:15px;
+    margin:20px auto;
+      text-align: center;
+    border-radius: 5px;
+  }
+
+  #result
+  {
+    font-size: larger;
+    font-weight: bold;
+    margin-left: 120px;
+  }
+</style>
+<script>
+
+    $(document).ready(function(){
+      $("#passsword").keyup(function(){
+        checkPassword($("#password").val());
+
+              });
+          });
+
+      function checkPassword(password)
+      {
+          var strength = 0;
+          if (password.length >= 5)
+      {
+          strength++;
+
+          if (password.match(/([a-z])/) && password.match(/([A-Z])/))
+          {
+              strength++;
+          }
+
+          if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/))
+          {
+              strength++;
+          }
+
+            if (password.match(/([!, @, #, $, %, ^, &, *, _, ~, ?])/))
+            {
+                strength++;
+            }
+            if (password.match(/(.*[!, @, #, $, %, ^, &, *, _, ~, ?].*[!, @, #, $, %, ^, &, *, _, ~, ?])/))
+            {
+                strength++;
+              }
+        }
+        alert(strength);
+});
+  </script>
+
+  </head>
+
+<body>
+  <div id="container">
+    <h2>Password Strength Meter</h2>
+    <input id="password" type="password" placeholder="Enter your password..." />
+    <div id="meter"></div>
+    <span id="result"></span>
+  </div>
+
+</body>
+  </html>
