@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewpoint" content="width=device-width, initial-scale=1">
+
+<title>Let's Develop jQuery UI Projects Developed from Scratch</title>
+
+<link rel="stylesheet" href="jquery-ui.css">
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+
+<!-- <link rel="stylesheet" href="jquery-ui.css">
+      <script src="jquery.js"></script>
+      <script src="jquery-ui.js"></script> -->
+      <!-- <referencing jquery-ui online -->
+
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+#fruits, #droparea
+{
+  float:left;
+  width:100%;
+  padding:50px;
+}
+
+#fruits div, #droparea div
+{
+    width:130px;
+    height:130px;
+    border:4px solid black;
+    float:left;
+    margin:5px;
+    padding: 5px;
+    border-radius:5px;
+    background: white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 25px;
+}
+#droparea div
+{
+  font-size: 25px;
+  line-height: 130px;
+}
+
+#fruits div img
+{
+  width:100px;
+  height:100px;
+
+}
+</style>
+
+<script>
+  var fruitsArr = ["myimages/apple.jpg",
+                    "myimages/kiwi.jpg",
+                    "myimages/pineapple.jpg",
+                    "myimages/watermelon.jpg",
+                    "myimages/orange.jpg",
+                    "myimages/strawberry.jpg",
+                    "myimages/bannana.jpg"];
+
+    var namesArr = ["Apple", "Pineapple", "Orange", "Bannana", "Strawberry", "Watermelon", "Kiwi"];
+
+    $(document).ready(function(){
+        shuffle(fruitsArr);
+          $.each(fruitsArr, function(index, value){
+            var fruit = value.slice(9,-4);
+            alert(fruit);
+            $("<div><img src=" + value + " /></div>")
+            .appendTo("#fruits")
+            .draggable({revert:true, scope:fruit});
+
+          });
+
+          shuffle(namesArr);
+          $.each(namesArr, function(index, value){
+            $("<div>" + value + "</div>")
+            .appendTo("#droparea")
+            .droppable({scope:value.toLowerCase(),
+                            drop:function(event, ui){
+                            $(ui.draggable).append($(this).text());
+                            $(this).hide("puff", "fast");
+                          }});
+
+          });
+    });
+
+    function shuffle(arr)
+    {
+      return arr.sort(function(){
+      return .5 - Math.random();
+      });
+
+    }
+  </script>
+
+  </head>
+
+<body>
+      <div id="fruits"></div>
+      <div id="droparea"></div>
+
+</body>
+  </html>
