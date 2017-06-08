@@ -2,6 +2,10 @@
 <html>
 <head>
 
+
+  <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1">
+  
 <title>Let's Develop jQuery UI Projects Developed from Scratch</title>
 
 <link rel="stylesheet" href="jquery-ui.css">
@@ -123,7 +127,13 @@
     $("#meter").progressbar({value:100});
     $(".ui-progressbar-value").css("background", "green");
       $("#result").html("Strong").css("color", "green");
-    
+
+  }
+  if (password.length == 0)
+  {
+    $("#meter").progressbar({value:0});
+    $(".ui-progressbar-value").css("background", "white");
+    $("#result").html("");
   }
 }
   </script>
