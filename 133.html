@@ -66,7 +66,7 @@ ol li:hover{
       $("#projects").tabs();
       $("ul").sortable({axis:"x", containment:"#projects"});
       $("ol").sortable({axis:"y", containment:"#projects"});
-      $("#btnAddTask").button();
+      $("#btnAddTask").button()
           .click(function(){
               $("#task-dialog").dialog({width:400, resizable:false, modal:true,
                   buttons:{
@@ -93,13 +93,15 @@ ol li:hover{
                               var projectName = $("#new-project").val();
                               var replaceName = projectName.split(" ").join("_");
                               $("<li><a href='#" + replaceName + "'>" + projectName + "</a></li>")
-                              .appendTo("#main");
+                              .appendTo("#main")
                               $("<ol id='" + replaceName + "'></ol>").appendTo("#projects").sortable();
                               $("#projects").tabs("refresh");
                               var tabCount = $("#projects .ui-tabs-nav li").lenght;
                               $("#projects").tabs("option", "active", tabCount-1);
+
                               $("#new-project").val("");
                               $(this).dialog("close");
+
                             },
                             "Cancel":function(){
                               $("#new-project").val("");
