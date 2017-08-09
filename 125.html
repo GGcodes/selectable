@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewpoint" content="width=device-width, initial-scale=1">
-  
+
 <title>Let's Develop jQuery UI Projects Developed from Scratch</title>
 
 <link rel="stylesheet" href="jquery-ui.css">
@@ -67,8 +67,9 @@
 
     $(document).ready(function(){
       $("#meter").progressbar();
-      $("#passsword").keyup(function(){
+      $("#password").keyup(function(){
         checkPassword($("#password").val());
+
 
               });
           });
@@ -104,8 +105,6 @@
           $("#meter").progressbar({value:20});
           $(".ui-progressbar-value").css("background", "red");
           $("#result").html("Too short").css("color", "red");
-
-
       }
 
       else if (strength < 3)
@@ -122,11 +121,10 @@
     $(".ui-progressbar-value").css("background", "blue");
     $("#result").html("Good").css("color", "blue");
   }
-  else
-  {
+  else{
     $("#meter").progressbar({value:100});
     $(".ui-progressbar-value").css("background", "green");
-      $("#result").html("Strong").css("color", "green");
+    $("#result").html("Strong").css("color", "green");
 
   }
   if (password.length == 0)
